@@ -5,14 +5,21 @@
   --semibold: 600;
   --extrabold: 800;
 
-  /* colors */
-  --Dark-Blue: hsl(209, 23%, 22%);
-  --Very-Dark-Blue: hsl(207, 26%, 17%);
-  --Very-Dark-Blue_tint: hsl(200, 15%, 8%);
-  --Dark-Gray: hsl(0, 0%, 52%);
-  --Very-Light-Gray: hsl(0, 0%, 98%);
-  --White: hsl(0, 0%, 100%);
+  /* default colors */
+  --elements: hsl(0, 0%, 100%);
+  --background: hsl(0, 0%, 98%);
+  --text: hsl(200, 15%, 8%);
+  --input: hsl(0, 0%, 52%);
 }
+
+.dark-theme {
+  /* colors when body element has .dark-theme */
+  --elements: hsl(209, 23%, 22%);
+  --background: hsl(207, 26%, 17%);
+  --text: hsl(0, 0%, 100%);
+  --input: hsl(0, 0%, 52%);
+}
+
 *,
 *::before,
 *::after {
@@ -28,8 +35,8 @@ body {
   font-variation-settings: 'wdth' 100, 'YTLC' 500;
   font-size: 1em; /* 16px */
   line-height: 1.5;
-  color: var(--Very-Dark-Blue);
-  background-color: var(--Very-Light-Gray);
+  color: var(--text);
+  background-color: var(--background);
   height: 100vh;
   margin: 0;
 }
@@ -38,9 +45,6 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  @media (min-width: 1200px) {
-    justify-content: center;
-  }
 }
 h1,
 h2,
@@ -48,7 +52,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--semibold);
+  font-weight: var(--extrabold);
   line-height: 1;
   margin: 0;
 }
@@ -64,20 +68,49 @@ ul {
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
+  max-width: 85rem;
+  padding: 0 2.5rem;
   margin: 0 auto;
   @media (min-width: 768px) {
-    padding-top: 2.5rem;
-    width: 43rem;
   }
   @media (min-width: 1200px) {
-    width: 63rem;
   }
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  background-color: var(--elements);
+  height: 5rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0562);
+}
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  font-size: 1.5rem;
+}
+.header__button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  height: 2.5rem;
+}
+.header__button img {
+  margin-right: 0.5rem;
+}
+.header__button span {
+  color: var(--text);
+  font-weight: var(--semibold);
+  font-size: 1rem;
+}
+
 .main {
-  background-color: var(--White);
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -95,5 +128,5 @@ ul {
   margin: 0;
 }
 .footer a {
-  color: var(--Very-Dark-Blue);
+  color: var(--text);
 }
