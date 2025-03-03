@@ -11,12 +11,12 @@
   --input: hsl(0, 0%, 52%);
 }
 
-.dark-theme {
+body.dark-theme {
   /* colors when body element has .dark-theme */
   --elements: hsl(209, 23%, 22%);
   --background: hsl(207, 26%, 17%);
   --text: hsl(0, 0%, 100%);
-  --input: hsl(0, 0%, 52%);
+  --input: hsl(0, 0%, 100%);
 }
 
 *,
@@ -119,6 +119,111 @@ ul {
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 1.5rem;
+}
+
+.section--search-filter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2.5rem 0;
+}
+
+.search__input-group {
+  position: relative;
+}
+
+.search__input-group svg {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search__input-group path {
+  fill: var(--input);
+}
+
+.search__input-group label {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.search__input {
+  font-weight: var(--regular);
+  font-size: 0.875rem;
+  color: var(--text);
+  background-color: var(--elements);
+  border-radius: 0.313rem;
+  border: 0;
+  width: 30rem;
+  height: 3.5rem;
+  padding: 0 2rem 0 4.5rem;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532);
+}
+.search__input::placeholder {
+  color: var(--input);
+}
+
+.filter {
+  position: relative;
+}
+
+.filter__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 12.5rem;
+  height: 3.5rem;
+  background-color: var(--elements);
+  border: 0;
+  padding: 0 1.5rem;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532);
+  border-radius: 0.313rem;
+}
+
+.filter__head span {
+  font-weight: var(--regular);
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+.filter__head path {
+  fill: var(--text);
+}
+
+.filter__list {
+  position: absolute;
+  top: 3.75rem;
+  width: 100%;
+  background-color: var(--elements);
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532);
+  border-radius: 0.313rem;
+}
+
+.filter__list li:first-child button {
+  padding-top: 1rem;
+}
+.filter__list li:last-child button {
+  padding-bottom: 1rem;
+}
+
+.filter__list button {
+  font-weight: var(--regular);
+  color: var(--text);
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  border: 0;
 }
 
 .footer {
