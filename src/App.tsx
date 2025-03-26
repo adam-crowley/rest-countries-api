@@ -5,11 +5,15 @@ import Main from './components/Main'
 import { useCountryStore } from './store/countyStore'
 
 function App() {
-  const { darkMode } = useCountryStore()
+  const { darkMode, currentRegion } = useCountryStore()
 
   useEffect(() => {
     document.body.classList.toggle('dark-theme')
   }, [darkMode])
+
+  useEffect(() => {
+    console.log('currentRegion: ', currentRegion)
+  }, [currentRegion])
 
   return (
     <>

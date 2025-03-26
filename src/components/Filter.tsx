@@ -1,7 +1,24 @@
+import { useState } from 'react'
+import { useCountryStore } from '../store/countyStore'
+import data from '../data.json'
+
 function Filter() {
+  const [openDropdown, setOpenDropdown] = useState(false)
+  const { setCurrentRegion } = useCountryStore()
+
+  const filterByRegion = (region: string) => {
+    setCurrentRegion(region)
+    //loop through data
+    //for each country if region matches the passed in variable
+    ////display countries
+  }
+
   return (
     <div className="filter">
-      <button className="filter__head">
+      <button
+        onClick={() => setOpenDropdown(openDropdown ? false : true)}
+        className={`filter__btn ${openDropdown ? 'filter__btn--open' : null}`}
+      >
         <span>Filter by Region</span>
         <svg
           width="6"
@@ -17,21 +34,23 @@ function Filter() {
           />
         </svg>
       </button>
-      <ul className="filter__list">
+      <ul
+        className={`filter__list ${openDropdown ? 'filter__list--open' : null}`}
+      >
         <li>
-          <button>Africa</button>
+          <button onClick={() => filterByRegion('africa')}>Africa</button>
         </li>
         <li>
-          <button>America</button>
+          <button onClick={() => filterByRegion('america')}>America</button>
         </li>
         <li>
-          <button>Asia</button>
+          <button onClick={() => filterByRegion('asia')}>Asia</button>
         </li>
         <li>
-          <button>Europe</button>
+          <button onClick={() => filterByRegion('europe')}>Europe</button>
         </li>
         <li>
-          <button>Oceania</button>
+          <button onClick={() => filterByRegion('oceania')}>Oceania</button>
         </li>
       </ul>
     </div>
