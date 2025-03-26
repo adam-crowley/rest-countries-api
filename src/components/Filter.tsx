@@ -11,8 +11,8 @@ function Filter() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M0.375 1.625L3.825 5.075L0.375 8.525L1.425 9.575L5.925 5.075L1.425 0.575001L0.375 1.625Z"
           />
         </svg>

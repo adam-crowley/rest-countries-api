@@ -1,3 +1,4 @@
+import Countries from './Countries'
 import Filter from './Filter'
 import Search from './Search'
 
@@ -9,6 +10,7 @@ function Main() {
           <Search />
           <Filter />
         </section>
+        <Countries />
       </div>
     </main>
   )
