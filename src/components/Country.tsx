@@ -1,6 +1,8 @@
-function Country() {
+import { CountryProps } from '../../types/models'
+
+function Country({ country }: CountryProps) {
   return (
-    <div key={country.numericCode} className="country">
+    <div className="country">
       <div className="country__img-wrapper">
         <img src={country.flag} alt={`Flag image for ${country.name}`} />
       </div>

@@ -1,29 +1,24 @@
+import { CountryItem } from '../../types/models'
 import data from '../data.json'
+import Country from './Country'
+import { useCountryStore } from '../store/countyStore'
 
 function Countries() {
+  const { currentRegion } = useCountryStore()
   return (
     <section className="section--countries">
-      {data.map((country) => (
-        <div key={country.numericCode} className="country">
-          <div className="country__img-wrapper">
-            <img src={country.flag} alt={`Flag image for ${country.name}`} />
-          </div>
-          <div className="country__details">
-            <h2>{country.name}</h2>
-            <ul className="country__details-list">
-              <li>
-                <strong>Population:</strong> {country.population}
-              </li>
-              <li>
-                <strong>Region:</strong> {country.region}
-              </li>
-              <li>
-                <strong>Capital:</strong> {country.capital}
-              </li>
-            </ul>
-          </div>
-        </div>
-      ))}
+      {currentRegion === 'all'
+        ? data.map((country: CountryItem) => (
+            <Country key={country.numericCode} country={country} />
+          ))
+        : data
+            .filter(
+              (country: CountryItem) =>
+                country.region.toLowerCase() === currentRegion
+            )
+            .map((country: CountryItem) => (
+              <Country key={country.numericCode} country={country} />
+            ))}
     </section>
   )
 }

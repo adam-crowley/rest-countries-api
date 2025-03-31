@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useCountryStore } from '../store/countyStore'
-import data from '../data.json'
 
 function Filter() {
   const [openDropdown, setOpenDropdown] = useState(false)
@@ -8,9 +7,7 @@ function Filter() {
 
   const filterByRegion = (region: string) => {
     setCurrentRegion(region)
-    //loop through data
-    //for each country if region matches the passed in variable
-    ////display countries
+    setOpenDropdown(false)
   }
 
   return (
@@ -41,7 +38,7 @@ function Filter() {
           <button onClick={() => filterByRegion('africa')}>Africa</button>
         </li>
         <li>
-          <button onClick={() => filterByRegion('america')}>America</button>
+          <button onClick={() => filterByRegion('americas')}>Americas</button>
         </li>
         <li>
           <button onClick={() => filterByRegion('asia')}>Asia</button>
