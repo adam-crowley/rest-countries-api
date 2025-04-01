@@ -3,11 +3,12 @@ import { useCountryStore } from '../store/countyStore'
 
 function Filter() {
   const [openDropdown, setOpenDropdown] = useState(false)
-  const { setCurrentRegion } = useCountryStore()
+  const { setCurrentRegion, setSearchInput } = useCountryStore()
 
   const filterByRegion = (region: string) => {
     setCurrentRegion(region)
     setOpenDropdown(false)
+    setSearchInput('')
   }
 
   return (

@@ -1,4 +1,19 @@
+import { CountryItem } from '../../types/models'
+import { useCountryStore } from '../store/countyStore'
+
 function Search() {
+  const { countryData, setFilteredData, searchInput, setSearchInput } =
+    useCountryStore()
+  const searchItems = (searchValue: string) => {
+    setSearchInput(searchValue)
+    const filteredData = countryData.filter((country: CountryItem) =>
+      Object.values(country.name)
+        .join('')
+        .toLowerCase()
+        .includes(searchValue.toLowerCase())
+    )
+    setFilteredData(filteredData)
+  }
   return (
     <div className="search">
       <div className="search__input-group">
@@ -16,7 +31,6 @@ function Search() {
             fill="#848484"
           />
         </svg>
-
         <label htmlFor="country-search">Search for a country…</label>
         <input
           className="search__input"
@@ -24,6 +38,8 @@ function Search() {
           id="country-search"
           name="country-search"
           placeholder="Search for a country…"
+          value={searchInput}
+          onChange={(e) => searchItems(e.target.value)}
         />
       </div>
     </div>
