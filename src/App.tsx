@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
-import Main from './components/Main'
 import { useCountryStore } from './store/countyStore'
 import data from './data.json'
+import { Outlet } from 'react-router'
 
 function App() {
   const {
@@ -43,7 +43,7 @@ function App() {
   return (
     <>
       <Header />
-      <Main />
+      <Outlet />
       <Footer />
     </>
   )
