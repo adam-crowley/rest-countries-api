@@ -277,6 +277,47 @@ ul {
   font-weight: var(--semibold);
 }
 
+.section--country-detail {
+  padding: 2.5rem 0;
+}
+
+.country-detail__link {
+  margin-bottom: 2.5rem;
+  display: inline-block;
+  color: var(--text);
+  font-weight: var(--light);
+  font-size: 1rem;
+  text-decoration: none;
+}
+.country-detail__arrow {
+  margin-right: 0.75rem;
+}
+.country-detail__arrow path {
+  fill: var(--text);
+}
+.country-detail__img-wrapper {
+  width: 43.75%;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+.country-detail__img-wrapper img {
+  display: block;
+  max-width: 100%;
+}
+.country-detail__group {
+  display: flex;
+  justify-content: space-between;
+}
+.country-detail__details-wrapper {
+  width: 43.75%;
+  display: flex;
+  align-items: center;
+  // flex-grow: 1;
+}
+.country__list-group {
+  display: flex;
+}
+
 .footer {
   margin: 0 auto;
   padding-top: 2rem;
