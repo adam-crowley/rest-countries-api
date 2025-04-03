@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { useCountryStore } from '../store/countyStore'
 
 function Header() {
@@ -6,7 +7,9 @@ function Header() {
   return (
     <header className="header">
       <div className="container">
-        <h1>Where in the world?</h1>
+        <h1>
+          <Link to={'/'}>Where in the world?</Link>
+        </h1>
         <button onClick={() => toggleDarkMode()} className="header__button">
           {darkMode ? (
             <img
