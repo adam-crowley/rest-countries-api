@@ -44,8 +44,8 @@ function CountryDetail() {
                   <div className="country-detail__details-wrapper">
                     <div className="country-detail__details">
                       <h2>{country.name}</h2>
-                      <div className="country__list-group">
-                        <ul className="country__details-list">
+                      <div className="country-detail__list-group">
+                        <ul className="country-detail__details-list">
                           <li>
                             <strong>Native Name:</strong> {country.nativeName}
                           </li>
@@ -62,33 +62,39 @@ function CountryDetail() {
                             <strong>Capital:</strong> {country.capital}
                           </li>
                         </ul>
-                        <ul className="country__details-list">
+                        <ul className="country-detail__details-list">
                           <li>
                             <strong>Top Level Domain:</strong>{' '}
                             {country.topLevelDomain}
                           </li>
-                          <li>
-                            <strong>Currencies:</strong>{' '}
-                            {country.currencies?.map(
-                              (currency) => currency.name
-                            )}
-                          </li>
-                          <li>
-                            <strong>Languages:</strong>{' '}
-                            {country.languages?.map(
-                              (language) => language.name
-                            )}
-                          </li>
+                          {country.currencies && (
+                            <li className="country-detail__details-currencies">
+                              <strong>Currencies:</strong>{' '}
+                              {country.currencies?.map((currency) => (
+                                <span>{currency.name}</span>
+                              ))}
+                            </li>
+                          )}
+                          {country.languages && (
+                            <li className="country-detail__details-languages">
+                              <strong>Languages:</strong>{' '}
+                              {country.languages?.map((language) => (
+                                <span>{language.name}</span>
+                              ))}
+                            </li>
+                          )}
                         </ul>
                       </div>
-                      <div className="country__border-countries">
-                        Border Countries:
-                        <ul>
-                          {country.borders?.map((border) => (
-                            <li>{border}</li>
-                          ))}
-                        </ul>
-                      </div>
+                      {country.borders && (
+                        <div className="country__border-countries">
+                          <strong>Border Countries: </strong>
+                          <ul>
+                            {country.borders?.map((border) => (
+                              <li>{border}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

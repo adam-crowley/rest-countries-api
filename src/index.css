@@ -45,6 +45,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 h1,
@@ -268,6 +269,8 @@ ul {
 }
 
 .country {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: 0.313rem;
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294);
@@ -287,6 +290,7 @@ ul {
 }
 
 .country__details {
+  flex-grow: 1;
   background-color: var(--elements);
   aspect-ratio: 33/20;
   padding: 1.5rem;
@@ -301,12 +305,22 @@ ul {
   margin-bottom: 0.75rem;
 }
 
+.country h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
 .country strong {
   font-weight: var(--semibold);
 }
 
 .section--country-detail {
   padding: 2.5rem 0;
+}
+
+.country-detail__details h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 .country-detail__link {
@@ -327,6 +341,7 @@ ul {
 }
 
 .country-detail__img-wrapper {
+  align-self: center;
   width: 43.75%;
   border-radius: 0.625rem;
   overflow: hidden;
@@ -334,7 +349,7 @@ ul {
 
 .country-detail__img-wrapper img {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 
 .country-detail__group {
@@ -343,17 +358,76 @@ ul {
 }
 
 .country-detail__details-wrapper {
-  width: 43.75%;
+  width: 50%;
   display: flex;
   align-items: center;
 }
 
-.country__list-group {
+.country-detail__details {
+  align-self: center;
+}
+
+.country-detail__details strong {
+  width: 10.5rem;
+  font-weight: var(--semibold);
+}
+
+.country-detail__list-group {
   display: flex;
 }
 
+.country-detail__details-list {
+  font-size: 1rem;
+  padding-right: 1rem;
+  width: 50%;
+}
+
+.country-detail__details-list li {
+  margin-bottom: 0.75rem;
+}
+
+.country-detail__details-languages span::after {
+  content: ", ";
+}
+.country-detail__details-languages span:last-child::after {
+  content: "";
+}
+
+.country-detail__details-currencies span::after {
+  content: ", ";
+}
+.country-detail__details-currencies span:last-child::after {
+  content: "";
+}
+
+.country__border-countries {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.country__border-countries ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.country__border-countries li {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  text-align: center;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1049);
+  background-color: var(--elements);
+  border-radius: 0.125rem;
+  height: 1.75rem;
+  min-width: 6rem;
+  padding: 0 0.5rem;
+  outline: 1px black;
+}
+
 .footer {
-  margin: 0 auto;
+  margin: auto auto 0;
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-align: center;
