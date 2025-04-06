@@ -6,10 +6,10 @@ function Main() {
   return (
     <main>
       <div className="container">
-        <section className="section--search-filter">
+        <div className="section--search-filter">
           <Search />
           <Filter />
-        </section>
+        </div>
         <Countries />
       </div>
     </main>

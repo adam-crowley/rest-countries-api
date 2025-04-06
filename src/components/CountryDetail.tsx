@@ -7,7 +7,7 @@ function CountryDetail() {
   const { countryData } = useCountryStore()
 
   const country = countryData.find(
-    (country: CountryItem) => country.name === countryName
+    (country: CountryItem) => country.name.replace(/ /g, '-') === countryName
   )
 
   return (

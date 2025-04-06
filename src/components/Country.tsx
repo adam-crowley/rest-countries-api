@@ -5,13 +5,15 @@ function Country({ country }: CountryProps) {
   return (
     <div className="country">
       <div className="country__img-wrapper">
-        <Link to={`country/${country.name}`}>
+        <Link to={`country/${country.name.replace(/ /g, '-')}`}>
           <img src={country.flag} alt={`Flag image for ${country.name}`} />
         </Link>
       </div>
       <div className="country__details">
         <h2>
-          <Link to={`country/${country.name}`}>{country.name}</Link>
+          <Link to={`country/${country.name.replace(/ /g, '-')}`}>
+            {country.name}
+          </Link>
         </h2>
         <ul className="country__details-list">
           <li>
