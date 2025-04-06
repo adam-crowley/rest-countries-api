@@ -95,7 +95,7 @@ ul {
   }
 }
 .header h1 {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   @media (min-width: 576px) {
     font-size: 1.5rem;
   }
@@ -117,8 +117,8 @@ ul {
   height: 2.5rem;
 }
 .header__button img {
-  width: 0.75rem;
-  margin-right: 0.4rem;
+  width: 0.9rem;
+  margin-right: 0.45rem;
   @media (min-width: 576px) {
     width: 1rem;
     margin-right: 0.5rem;
@@ -127,7 +127,7 @@ ul {
 .header__button span {
   color: var(--text);
   font-weight: var(--semibold);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   @media (min-width: 576px) {
     font-size: 1rem;
   }
@@ -157,7 +157,7 @@ ul {
 
 .search__input {
   font-weight: var(--regular);
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--text);
   background-color: var(--elements);
   border-radius: 0.313rem;
