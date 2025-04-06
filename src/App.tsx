@@ -10,7 +10,11 @@ function App() {
   const { setCountryData, darkMode } = useCountryStore()
 
   useEffect(() => {
-    document.body.classList.toggle('dark-theme')
+    if (darkMode) {
+      document.body.classList.add('dark-theme')
+    } else {
+      document.body.classList.remove('dark-theme')
+    }
   }, [darkMode])
 
   useEffect(() => {
