@@ -7,14 +7,7 @@ import data from './data.json'
 import { Outlet } from 'react-router'
 
 function App() {
-  const {
-    countryData,
-    filteredData,
-    setCountryData,
-    darkMode,
-    currentRegion,
-    searchInput,
-  } = useCountryStore()
+  const { setCountryData, darkMode } = useCountryStore()
 
   useEffect(() => {
     document.body.classList.toggle('dark-theme')
@@ -23,22 +16,6 @@ function App() {
   useEffect(() => {
     setCountryData(data)
   }, [])
-
-  useEffect(() => {
-    console.log('countryData: ', countryData)
-  }, [countryData])
-
-  useEffect(() => {
-    console.log('filteredData: ', filteredData)
-  }, [filteredData])
-
-  useEffect(() => {
-    console.log('currentRegion: ', currentRegion)
-  }, [currentRegion])
-
-  useEffect(() => {
-    console.log('searchInput: ', searchInput)
-  }, [searchInput])
 
   return (
     <>
